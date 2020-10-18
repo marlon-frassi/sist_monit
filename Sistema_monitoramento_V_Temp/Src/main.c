@@ -198,19 +198,19 @@ int main(void)
 
 	  // Public on the MQTT broker of the message in a topic V1
 	  sprintf(str, "%.2f", V1rms);
-	  error = MQTT_Pub("stieeufmg/v1", str);
+	  error = MQTT_Pub("publish/v1", str);
 
 	  // Public on the MQTT broker of the message in a topic V2
 	  sprintf(str, "%.2f", V2rms);
-	  error = MQTT_Pub("stieeufmg/v2", str);
+	  error = MQTT_Pub("publish/v2", str);
 
 	  // Public on the MQTT broker of the message in a topic V3
 	  sprintf(str, "%.2f", V3rms);
-	  error = MQTT_Pub("stieeufmg/v3", str);
+	  error = MQTT_Pub("publish/v3", str);
 
 	  // Public on the MQTT broker of the message in a topic Temp
 	  sprintf(str, "%.2f", Temperatura);
-	  error = MQTT_Pub("stieeufmg/temp", str);
+	  error = MQTT_Pub("publish/temp", str);
 
 	  //Reconnect if error
 	  if(error > 0){
