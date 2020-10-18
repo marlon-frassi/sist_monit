@@ -1,0 +1,1977 @@
+[
+	{
+		"id": "5a76f86b.c39ca8",
+		"type": "tab",
+		"label": "Sistema_monitoramento_V_Temp",
+		"disabled": false,
+		"info": ""
+	},
+	{
+		"id": "b8e8984a.529dc8",
+		"type": "mqtt in",
+		"z": "5a76f86b.c39ca8",
+		"name": "",
+		"topic": "stieeufmg/v1",
+		"qos": "2",
+		"datatype": "auto",
+		"broker": "f86c69d5.74df28",
+		"x": 190,
+		"y": 200,
+		"wires": [
+			[
+				"b955caef.4ee348",
+				"e45ca1cb.df8a9",
+				"286c98eb.a34e48",
+				"fe090634.be9898",
+				"6e77fc55.358994"
+			]
+		]
+	},
+	{
+		"id": "b955caef.4ee348",
+		"type": "debug",
+		"z": "5a76f86b.c39ca8",
+		"name": "",
+		"active": true,
+		"tosidebar": true,
+		"console": false,
+		"tostatus": false,
+		"complete": "true",
+		"targetType": "full",
+		"x": 410,
+		"y": 140,
+		"wires": []
+	},
+	{
+		"id": "e45ca1cb.df8a9",
+		"type": "ui_gauge",
+		"z": "5a76f86b.c39ca8",
+		"name": "",
+		"group": "eb6e797b.1bbec8",
+		"order": 1,
+		"width": 6,
+		"height": 4,
+		"gtype": "gage",
+		"title": "Tensão da Rede",
+		"label": "V",
+		"format": "{{value}}",
+		"min": "0",
+		"max": "250",
+		"colors": [
+			"#ff0000",
+			"#4ddb00",
+			"#ff0000"
+		],
+		"seg1": "198",
+		"seg2": "240",
+		"x": 440,
+		"y": 200,
+		"wires": []
+	},
+	{
+		"id": "286c98eb.a34e48",
+		"type": "ui_chart",
+		"z": "5a76f86b.c39ca8",
+		"name": "",
+		"group": "eb6e797b.1bbec8",
+		"order": 2,
+		"width": 0,
+		"height": 0,
+		"label": "Tensão da Rede",
+		"chartType": "line",
+		"legend": "false",
+		"xformat": "HH:mm:ss",
+		"interpolate": "linear",
+		"nodata": "",
+		"dot": false,
+		"ymin": "",
+		"ymax": "",
+		"removeOlder": "7",
+		"removeOlderPoints": "",
+		"removeOlderUnit": "86400",
+		"cutout": 0,
+		"useOneColor": false,
+		"colors": [
+			"#1f77b4",
+			"#aec7e8",
+			"#ff7f0e",
+			"#2ca02c",
+			"#98df8a",
+			"#d62728",
+			"#ff9896",
+			"#9467bd",
+			"#c5b0d5"
+		],
+		"useOldStyle": true,
+		"outputs": 1,
+		"x": 440,
+		"y": 260,
+		"wires": [
+			[
+				"d28e49a6.77edd8"
+			]
+		]
+	},
+	{
+		"id": "4eae076.b572ff8",
+		"type": "mqtt in",
+		"z": "5a76f86b.c39ca8",
+		"name": "",
+		"topic": "stieeufmg/temp",
+		"qos": "2",
+		"datatype": "auto",
+		"broker": "f86c69d5.74df28",
+		"x": 200,
+		"y": 740,
+		"wires": [
+			[
+				"ebdac18b.3ae02",
+				"918404a2.6a1808",
+				"ff3509a7.1df868",
+				"1a363fc.deee1c",
+				"a27989e5.f97318"
+			]
+		]
+	},
+	{
+		"id": "ebdac18b.3ae02",
+		"type": "ui_gauge",
+		"z": "5a76f86b.c39ca8",
+		"name": "",
+		"group": "56a67a37.065bd4",
+		"order": 1,
+		"width": 0,
+		"height": 0,
+		"gtype": "gage",
+		"title": "Temperatura",
+		"label": "°C",
+		"format": "{{value}}",
+		"min": "10",
+		"max": "40",
+		"colors": [
+			"#1ffffb",
+			"#ffd500",
+			"#ff0000"
+		],
+		"seg1": "22",
+		"seg2": "30",
+		"x": 430,
+		"y": 740,
+		"wires": []
+	},
+	{
+		"id": "918404a2.6a1808",
+		"type": "ui_chart",
+		"z": "5a76f86b.c39ca8",
+		"name": "",
+		"group": "56a67a37.065bd4",
+		"order": 2,
+		"width": 0,
+		"height": 0,
+		"label": "Temperatura",
+		"chartType": "line",
+		"legend": "false",
+		"xformat": "HH:mm:ss",
+		"interpolate": "linear",
+		"nodata": "",
+		"dot": false,
+		"ymin": "",
+		"ymax": "",
+		"removeOlder": "10",
+		"removeOlderPoints": "",
+		"removeOlderUnit": "86400",
+		"cutout": 0,
+		"useOneColor": false,
+		"colors": [
+			"#f00505",
+			"#aec7e8",
+			"#ff7f0e",
+			"#2ca02c",
+			"#98df8a",
+			"#d62728",
+			"#ff9896",
+			"#9467bd",
+			"#c5b0d5"
+		],
+		"useOldStyle": true,
+		"outputs": 1,
+		"x": 430,
+		"y": 800,
+		"wires": [
+			[
+				"90731085.230ba"
+			]
+		]
+	},
+	{
+		"id": "1e1fd0dd.f0ccbf",
+		"type": "mqtt in",
+		"z": "5a76f86b.c39ca8",
+		"name": "",
+		"topic": "stieeufmg/v2",
+		"qos": "2",
+		"datatype": "auto",
+		"broker": "f86c69d5.74df28",
+		"x": 190,
+		"y": 380,
+		"wires": [
+			[
+				"2bdc0d9a.ba99c2",
+				"28a031f5.70e1ee",
+				"5611a99e.2e46f8",
+				"938e582.1cc26a8"
+			]
+		]
+	},
+	{
+		"id": "2bdc0d9a.ba99c2",
+		"type": "ui_gauge",
+		"z": "5a76f86b.c39ca8",
+		"name": "",
+		"group": "bbd43066.29b24",
+		"order": 1,
+		"width": 6,
+		"height": 4,
+		"gtype": "gage",
+		"title": "Tensão UPS 1",
+		"label": "V",
+		"format": "{{value}}",
+		"min": "0",
+		"max": "250",
+		"colors": [
+			"#ff0000",
+			"#4ddb00",
+			"#ff0000"
+		],
+		"seg1": "198",
+		"seg2": "240",
+		"x": 440,
+		"y": 380,
+		"wires": []
+	},
+	{
+		"id": "28a031f5.70e1ee",
+		"type": "ui_chart",
+		"z": "5a76f86b.c39ca8",
+		"name": "",
+		"group": "bbd43066.29b24",
+		"order": 2,
+		"width": 0,
+		"height": 0,
+		"label": "Tensão UPS 1",
+		"chartType": "line",
+		"legend": "false",
+		"xformat": "HH:mm:ss",
+		"interpolate": "linear",
+		"nodata": "",
+		"dot": false,
+		"ymin": "",
+		"ymax": "",
+		"removeOlder": "10",
+		"removeOlderPoints": "",
+		"removeOlderUnit": "86400",
+		"cutout": 0,
+		"useOneColor": false,
+		"colors": [
+			"#499b12",
+			"#aec7e8",
+			"#ff7f0e",
+			"#2ca02c",
+			"#98df8a",
+			"#d62728",
+			"#ff9896",
+			"#9467bd",
+			"#c5b0d5"
+		],
+		"useOldStyle": true,
+		"outputs": 1,
+		"x": 440,
+		"y": 440,
+		"wires": [
+			[
+				"3545720f.33655e"
+			]
+		]
+	},
+	{
+		"id": "9a14fbac.706ae8",
+		"type": "mqtt in",
+		"z": "5a76f86b.c39ca8",
+		"name": "",
+		"topic": "stieeufmg/v3",
+		"qos": "2",
+		"datatype": "auto",
+		"broker": "f86c69d5.74df28",
+		"x": 190,
+		"y": 560,
+		"wires": [
+			[
+				"c091d83f.3455f8",
+				"b351fa6c.cb6c98",
+				"b58a21c1.20d6b",
+				"39ec9473.2b403c"
+			]
+		]
+	},
+	{
+		"id": "c091d83f.3455f8",
+		"type": "ui_gauge",
+		"z": "5a76f86b.c39ca8",
+		"name": "",
+		"group": "e25a9348.7262c",
+		"order": 1,
+		"width": 6,
+		"height": 4,
+		"gtype": "gage",
+		"title": "Tensão UPS 2",
+		"label": "V",
+		"format": "{{value}}",
+		"min": "0",
+		"max": "250",
+		"colors": [
+			"#ff0000",
+			"#4ddb00",
+			"#ff0000"
+		],
+		"seg1": "198",
+		"seg2": "240",
+		"x": 440,
+		"y": 560,
+		"wires": []
+	},
+	{
+		"id": "b351fa6c.cb6c98",
+		"type": "ui_chart",
+		"z": "5a76f86b.c39ca8",
+		"name": "",
+		"group": "e25a9348.7262c",
+		"order": 2,
+		"width": 0,
+		"height": 0,
+		"label": "Tensão UPS 2",
+		"chartType": "line",
+		"legend": "false",
+		"xformat": "HH:mm:ss",
+		"interpolate": "linear",
+		"nodata": "",
+		"dot": false,
+		"ymin": "",
+		"ymax": "",
+		"removeOlder": "10",
+		"removeOlderPoints": "",
+		"removeOlderUnit": "86400",
+		"cutout": 0,
+		"useOneColor": false,
+		"colors": [
+			"#f2e63a",
+			"#aec7e8",
+			"#ff7f0e",
+			"#2ca02c",
+			"#98df8a",
+			"#d62728",
+			"#ff9896",
+			"#9467bd",
+			"#c5b0d5"
+		],
+		"useOldStyle": true,
+		"outputs": 1,
+		"x": 440,
+		"y": 620,
+		"wires": [
+			[
+				"7798151d.30111c"
+			]
+		]
+	},
+	{
+		"id": "99d8b14a.c6fae",
+		"type": "inject",
+		"z": "5a76f86b.c39ca8",
+		"name": "",
+		"topic": "",
+		"payload": "",
+		"payloadType": "date",
+		"repeat": "600",
+		"crontab": "",
+		"once": false,
+		"onceDelay": 0.1,
+		"x": 190,
+		"y": 980,
+		"wires": [
+			[
+				"d994e324.da32b"
+			]
+		]
+	},
+	{
+		"id": "d994e324.da32b",
+		"type": "http request",
+		"z": "5a76f86b.c39ca8",
+		"name": "",
+		"method": "GET",
+		"ret": "txt",
+		"paytoqs": false,
+		"url": "http://api.openweathermap.org/data/2.5/weather?id=3470127&units=metric&APPID=77abf61a02e264ce5ae14c3c1feaa39a",
+		"tls": "",
+		"persist": false,
+		"proxy": "",
+		"authType": "",
+		"x": 350,
+		"y": 980,
+		"wires": [
+			[
+				"9edc7bbd.813708"
+			]
+		]
+	},
+	{
+		"id": "9edc7bbd.813708",
+		"type": "json",
+		"z": "5a76f86b.c39ca8",
+		"name": "",
+		"property": "payload",
+		"action": "",
+		"pretty": false,
+		"x": 490,
+		"y": 980,
+		"wires": [
+			[
+				"b875c642.c8b068",
+				"6eee9b53.21d1d4",
+				"59774978.8f5bb8",
+				"d25b616a.571c9"
+			]
+		]
+	},
+	{
+		"id": "c0af0c6d.72fac",
+		"type": "ui_gauge",
+		"z": "5a76f86b.c39ca8",
+		"name": "",
+		"group": "2f25630f.77df1c",
+		"order": 3,
+		"width": 6,
+		"height": 3,
+		"gtype": "gage",
+		"title": "Mínima",
+		"label": "°C",
+		"format": "{{value}}",
+		"min": 0,
+		"max": "40",
+		"colors": [
+			"#00b500",
+			"#e6e600",
+			"#ca3838"
+		],
+		"seg1": "",
+		"seg2": "",
+		"x": 860,
+		"y": 980,
+		"wires": []
+	},
+	{
+		"id": "b875c642.c8b068",
+		"type": "change",
+		"z": "5a76f86b.c39ca8",
+		"name": "",
+		"rules": [
+			{
+				"t": "set",
+				"p": "payload",
+				"pt": "msg",
+				"to": "payload.main.temp_min",
+				"tot": "msg"
+			}
+		],
+		"action": "",
+		"property": "",
+		"from": "",
+		"to": "",
+		"reg": false,
+		"x": 700,
+		"y": 980,
+		"wires": [
+			[
+				"c0af0c6d.72fac"
+			]
+		]
+	},
+	{
+		"id": "8c6dcb00.19e058",
+		"type": "ui_gauge",
+		"z": "5a76f86b.c39ca8",
+		"name": "",
+		"group": "2f25630f.77df1c",
+		"order": 5,
+		"width": 6,
+		"height": 3,
+		"gtype": "gage",
+		"title": "Máxima",
+		"label": "°C",
+		"format": "{{value}}",
+		"min": 0,
+		"max": "40",
+		"colors": [
+			"#00b500",
+			"#e6e600",
+			"#ca3838"
+		],
+		"seg1": "",
+		"seg2": "",
+		"x": 860,
+		"y": 1040,
+		"wires": []
+	},
+	{
+		"id": "6eee9b53.21d1d4",
+		"type": "change",
+		"z": "5a76f86b.c39ca8",
+		"name": "",
+		"rules": [
+			{
+				"t": "set",
+				"p": "payload",
+				"pt": "msg",
+				"to": "payload.main.temp_max",
+				"tot": "msg"
+			}
+		],
+		"action": "",
+		"property": "",
+		"from": "",
+		"to": "",
+		"reg": false,
+		"x": 700,
+		"y": 1040,
+		"wires": [
+			[
+				"8c6dcb00.19e058"
+			]
+		]
+	},
+	{
+		"id": "59774978.8f5bb8",
+		"type": "function",
+		"z": "5a76f86b.c39ca8",
+		"name": "",
+		"func": "msg.payload = Math.round(msg.payload.main.temp)\nreturn msg;",
+		"outputs": 1,
+		"noerr": 0,
+		"x": 670,
+		"y": 1100,
+		"wires": [
+			[
+				"7ae3569b.7a5b68"
+			]
+		]
+	},
+	{
+		"id": "7ae3569b.7a5b68",
+		"type": "ui_gauge",
+		"z": "5a76f86b.c39ca8",
+		"name": "",
+		"group": "2f25630f.77df1c",
+		"order": 1,
+		"width": 6,
+		"height": 3,
+		"gtype": "donut",
+		"title": "Temperatura",
+		"label": "°C",
+		"format": "{{value}}",
+		"min": "10",
+		"max": "40",
+		"colors": [
+			"#05fbff",
+			"#fbff00",
+			"#ca3838"
+		],
+		"seg1": "",
+		"seg2": "",
+		"x": 870,
+		"y": 1100,
+		"wires": []
+	},
+	{
+		"id": "fe090634.be9898",
+		"type": "link out",
+		"z": "5a76f86b.c39ca8",
+		"name": "V1_Out",
+		"links": [
+			"d2641577.09bcd8",
+			"73477f81.4cb1b",
+			"253fdd4c.cdb962",
+			"a9490dfe.b9bef",
+			"e73135fe.1707f8",
+			"f51fa8de.a0dd98",
+			"6474b5e8.f12b6c",
+			"42a21093.504a3",
+			"21a1b80a.08be28"
+		],
+		"x": 375,
+		"y": 320,
+		"wires": []
+	},
+	{
+		"id": "5611a99e.2e46f8",
+		"type": "link out",
+		"z": "5a76f86b.c39ca8",
+		"name": "V2_Out",
+		"links": [
+			"253fdd4c.cdb962",
+			"e73135fe.1707f8",
+			"f51fa8de.a0dd98",
+			"6474b5e8.f12b6c",
+			"42a21093.504a3",
+			"21a1b80a.08be28"
+		],
+		"x": 375,
+		"y": 500,
+		"wires": []
+	},
+	{
+		"id": "b58a21c1.20d6b",
+		"type": "link out",
+		"z": "5a76f86b.c39ca8",
+		"name": "V3_Out",
+		"links": [
+			"253fdd4c.cdb962",
+			"e73135fe.1707f8",
+			"f51fa8de.a0dd98",
+			"6474b5e8.f12b6c",
+			"42a21093.504a3",
+			"21a1b80a.08be28"
+		],
+		"x": 375,
+		"y": 680,
+		"wires": []
+	},
+	{
+		"id": "ff3509a7.1df868",
+		"type": "link out",
+		"z": "5a76f86b.c39ca8",
+		"name": "Temp_Out",
+		"links": [
+			"253fdd4c.cdb962",
+			"f8b4c205.5ed1d",
+			"e73135fe.1707f8",
+			"f51fa8de.a0dd98",
+			"6474b5e8.f12b6c",
+			"42a21093.504a3",
+			"21a1b80a.08be28"
+		],
+		"x": 375,
+		"y": 860,
+		"wires": []
+	},
+	{
+		"id": "d25b616a.571c9",
+		"type": "debug",
+		"z": "5a76f86b.c39ca8",
+		"name": "",
+		"active": true,
+		"tosidebar": true,
+		"console": false,
+		"tostatus": false,
+		"complete": "false",
+		"x": 690,
+		"y": 1160,
+		"wires": []
+	},
+	{
+		"id": "1a363fc.deee1c",
+		"type": "debug",
+		"z": "5a76f86b.c39ca8",
+		"name": "",
+		"active": false,
+		"tosidebar": true,
+		"console": false,
+		"tostatus": false,
+		"complete": "false",
+		"x": 430,
+		"y": 920,
+		"wires": []
+	},
+	{
+		"id": "4f702d7.f8966d4",
+		"type": "falling-edge",
+		"z": "5a76f86b.c39ca8",
+		"name": "Queda de Tensão",
+		"threshold": "100",
+		"x": 890,
+		"y": 220,
+		"wires": [
+			[
+				"8eefcffa.21bc2"
+			]
+		]
+	},
+	{
+		"id": "8eefcffa.21bc2",
+		"type": "function",
+		"z": "5a76f86b.c39ca8",
+		"name": "msg",
+		"func": "context.data = context.data || {};\nswitch (msg.topic){\n    case \"stieeufmg/v1\":\n    context.data.v1 = msg.payload;\n    break;\n}\n\nmsg.payload = {}\nmsg.payload.chatId = 698770097\nmsg.payload.type = 'message'\nmsg.payload.content =  \"ALERTA!!! Queda de tensão da Rede.\\n\";\n\nreturn msg;",
+		"outputs": 1,
+		"noerr": 0,
+		"x": 1050,
+		"y": 220,
+		"wires": [
+			[
+				"f49b52a.2f22db"
+			]
+		]
+	},
+	{
+		"id": "6e77fc55.358994",
+		"type": "function",
+		"z": "5a76f86b.c39ca8",
+		"name": "",
+		"func": "var Voltage = parseInt(msg.payload);\n\nreturn msg;",
+		"outputs": "1",
+		"noerr": 0,
+		"x": 710,
+		"y": 200,
+		"wires": [
+			[
+				"4f702d7.f8966d4",
+				"4c507c98.1c6514",
+				"45e07ea4.9c419",
+				"977a10e5.7ffc1"
+			]
+		]
+	},
+	{
+		"id": "4c507c98.1c6514",
+		"type": "rising-edge",
+		"z": "5a76f86b.c39ca8",
+		"name": "Restabelecimento",
+		"threshold": "100",
+		"x": 890,
+		"y": 260,
+		"wires": [
+			[
+				"5654e8c7.6316a8"
+			]
+		]
+	},
+	{
+		"id": "5654e8c7.6316a8",
+		"type": "function",
+		"z": "5a76f86b.c39ca8",
+		"name": "msg",
+		"func": "context.data = context.data || {};\nswitch (msg.topic){\n    case \"stieeufmg/v1\":\n    context.data.v1 = msg.payload;\n    break;\n}\n\nmsg.payload = {}\nmsg.payload.chatId = 698770097\nmsg.payload.type = 'message'\nmsg.payload.content =  \"Restabelecimento da tensão da Rede: \"+ context.data.v1 + \" V\\n\";\n\nreturn msg;",
+		"outputs": 1,
+		"noerr": 0,
+		"x": 1050,
+		"y": 260,
+		"wires": [
+			[
+				"f49b52a.2f22db"
+			]
+		]
+	},
+	{
+		"id": "b8c99d8f.bdf4e",
+		"type": "falling-edge",
+		"z": "5a76f86b.c39ca8",
+		"name": "Queda de Tensão",
+		"threshold": "100",
+		"x": 890,
+		"y": 400,
+		"wires": [
+			[
+				"7163e168.b346a"
+			]
+		]
+	},
+	{
+		"id": "7163e168.b346a",
+		"type": "function",
+		"z": "5a76f86b.c39ca8",
+		"name": "msg",
+		"func": "context.data = context.data || {};\nswitch (msg.topic){\n    case \"stieeufmg/v2\":\n    context.data.v1 = msg.payload;\n    break;\n}\n\nmsg.payload = {}\nmsg.payload.chatId = 698770097\nmsg.payload.type = 'message'\nmsg.payload.content =  \"ALERTA!!! Queda de tensão no UPS 1.\\n\";\n\nreturn msg;",
+		"outputs": 1,
+		"noerr": 0,
+		"x": 1050,
+		"y": 400,
+		"wires": [
+			[
+				"f49b52a.2f22db"
+			]
+		]
+	},
+	{
+		"id": "938e582.1cc26a8",
+		"type": "function",
+		"z": "5a76f86b.c39ca8",
+		"name": "",
+		"func": "var Voltage = parseInt(msg.payload);\n\nreturn msg;",
+		"outputs": "1",
+		"noerr": 0,
+		"x": 710,
+		"y": 380,
+		"wires": [
+			[
+				"b8c99d8f.bdf4e",
+				"ea6c1c1e.23005",
+				"fee4eabc.c1f2a8",
+				"2e801f02.97c56"
+			]
+		]
+	},
+	{
+		"id": "ea6c1c1e.23005",
+		"type": "rising-edge",
+		"z": "5a76f86b.c39ca8",
+		"name": "Restabelecimento",
+		"threshold": "100",
+		"x": 890,
+		"y": 440,
+		"wires": [
+			[
+				"576456a3.5d8508"
+			]
+		]
+	},
+	{
+		"id": "576456a3.5d8508",
+		"type": "function",
+		"z": "5a76f86b.c39ca8",
+		"name": "msg",
+		"func": "context.data = context.data || {};\nswitch (msg.topic){\n    case \"stieeufmg/v2\":\n    context.data.v2 = msg.payload;\n    break;\n}\n\nmsg.payload = {}\nmsg.payload.chatId = 698770097\nmsg.payload.type = 'message'\nmsg.payload.content =  \"Restabelecimento da tensão no UPS 1: \"+ context.data.v2 + \" V\\n\";\n\nreturn msg;",
+		"outputs": 1,
+		"noerr": 0,
+		"x": 1050,
+		"y": 440,
+		"wires": [
+			[
+				"f49b52a.2f22db"
+			]
+		]
+	},
+	{
+		"id": "626baa3c.663d44",
+		"type": "falling-edge",
+		"z": "5a76f86b.c39ca8",
+		"name": "Queda de Tensão",
+		"threshold": "100",
+		"x": 890,
+		"y": 580,
+		"wires": [
+			[
+				"62b5a851.08aa88"
+			]
+		]
+	},
+	{
+		"id": "62b5a851.08aa88",
+		"type": "function",
+		"z": "5a76f86b.c39ca8",
+		"name": "msg",
+		"func": "context.data = context.data || {};\nswitch (msg.topic){\n    case \"stieeufmg/v3\":\n    context.data.v1 = msg.payload;\n    break;\n}\n\nmsg.payload = {}\nmsg.payload.chatId = 698770097\nmsg.payload.type = 'message'\nmsg.payload.content =  \"ALERTA!!! Queda de tensão no UPS 2.\\n\";\n\nreturn msg;",
+		"outputs": 1,
+		"noerr": 0,
+		"x": 1050,
+		"y": 580,
+		"wires": [
+			[
+				"f49b52a.2f22db"
+			]
+		]
+	},
+	{
+		"id": "39ec9473.2b403c",
+		"type": "function",
+		"z": "5a76f86b.c39ca8",
+		"name": "",
+		"func": "var Voltage = parseInt(msg.payload);\n\nreturn msg;",
+		"outputs": "1",
+		"noerr": 0,
+		"x": 710,
+		"y": 560,
+		"wires": [
+			[
+				"626baa3c.663d44",
+				"2104cbc1.00efb4",
+				"3f2717e.ed4a1e8",
+				"21f73753.ff0c98"
+			]
+		]
+	},
+	{
+		"id": "2104cbc1.00efb4",
+		"type": "rising-edge",
+		"z": "5a76f86b.c39ca8",
+		"name": "Restabelecimento",
+		"threshold": "100",
+		"x": 890,
+		"y": 620,
+		"wires": [
+			[
+				"3c7249cb.dfe526"
+			]
+		]
+	},
+	{
+		"id": "3c7249cb.dfe526",
+		"type": "function",
+		"z": "5a76f86b.c39ca8",
+		"name": "msg",
+		"func": "context.data = context.data || {};\nswitch (msg.topic){\n    case \"stieeufmg/v3\":\n    context.data.v3 = msg.payload;\n    break;\n}\n\nmsg.payload = {}\nmsg.payload.chatId = 698770097\nmsg.payload.type = 'message'\nmsg.payload.content =  \"Restabelecimento da tensão no UPS 2: \"+ context.data.v3 + \" V\\n\";\n\nreturn msg;",
+		"outputs": 1,
+		"noerr": 0,
+		"x": 1050,
+		"y": 620,
+		"wires": [
+			[
+				"f49b52a.2f22db"
+			]
+		]
+	},
+	{
+		"id": "b50d5b92.3a46a8",
+		"type": "falling-edge",
+		"z": "5a76f86b.c39ca8",
+		"name": "Normal",
+		"threshold": "22",
+		"x": 860,
+		"y": 720,
+		"wires": [
+			[
+				"2901d3d6.103a1c"
+			]
+		]
+	},
+	{
+		"id": "e5b90c42.1bead",
+		"type": "function",
+		"z": "5a76f86b.c39ca8",
+		"name": "msg",
+		"func": "context.data = context.data || {};\nswitch (msg.topic){\n    case \"stieeufmg/temp\":\n    context.data.temp = msg.payload;\n    break;\n}\n\nmsg.payload = {}\nmsg.payload.chatId = 698770097\nmsg.payload.type = 'message'\nmsg.payload.content =  \"Atenção! Nivel de temperatura:\"+ context.data.temp + \" °C\\n\";\n\nreturn msg;",
+		"outputs": 1,
+		"noerr": 0,
+		"x": 1050,
+		"y": 680,
+		"wires": [
+			[
+				"f49b52a.2f22db"
+			]
+		]
+	},
+	{
+		"id": "a27989e5.f97318",
+		"type": "function",
+		"z": "5a76f86b.c39ca8",
+		"name": "",
+		"func": "var Temp = Math.round(msg.payload);\n\nreturn msg;",
+		"outputs": "1",
+		"noerr": 0,
+		"x": 710,
+		"y": 740,
+		"wires": [
+			[
+				"ef041da7.a5e48",
+				"b50d5b92.3a46a8",
+				"2896b2bd.78bf9e",
+				"a811380.ad227c8"
+			]
+		]
+	},
+	{
+		"id": "2896b2bd.78bf9e",
+		"type": "rising-edge",
+		"z": "5a76f86b.c39ca8",
+		"name": "Critico",
+		"threshold": "30",
+		"x": 850,
+		"y": 760,
+		"wires": [
+			[
+				"c8fc2d71.f38d6"
+			]
+		]
+	},
+	{
+		"id": "2901d3d6.103a1c",
+		"type": "function",
+		"z": "5a76f86b.c39ca8",
+		"name": "msg",
+		"func": "context.data = context.data || {};\nswitch (msg.topic){\n    case \"stieeufmg/temp\":\n    context.data.temp = msg.payload;\n    break;\n}\n\nmsg.payload = {}\nmsg.payload.chatId = 698770097\nmsg.payload.type = 'message'\nmsg.payload.content =  \"Nivel de temperatura:\"+ context.data.temp + \" °C\\n\";\n\nreturn msg;",
+		"outputs": 1,
+		"noerr": 0,
+		"x": 1050,
+		"y": 720,
+		"wires": [
+			[
+				"f49b52a.2f22db"
+			]
+		]
+	},
+	{
+		"id": "c8fc2d71.f38d6",
+		"type": "function",
+		"z": "5a76f86b.c39ca8",
+		"name": "msg",
+		"func": "context.data = context.data || {};\nswitch (msg.topic){\n    case \"stieeufmg/temp\":\n    context.data.temp = msg.payload;\n    break;\n}\n\nmsg.payload = {}\nmsg.payload.chatId = 698770097\nmsg.payload.type = 'message'\nmsg.payload.content =  \"ALERTA!!! Nivel de temperatura:\"+ context.data.temp + \" °C\\n\";\n\nreturn msg;",
+		"outputs": 1,
+		"noerr": 0,
+		"x": 1050,
+		"y": 760,
+		"wires": [
+			[
+				"f49b52a.2f22db"
+			]
+		]
+	},
+	{
+		"id": "ef041da7.a5e48",
+		"type": "rising-edge",
+		"z": "5a76f86b.c39ca8",
+		"name": "Atenção 22ºC",
+		"threshold": "22",
+		"x": 880,
+		"y": 680,
+		"wires": [
+			[
+				"e5b90c42.1bead"
+			]
+		]
+	},
+	{
+		"id": "2b13a07d.4d1fc",
+		"type": "function",
+		"z": "5a76f86b.c39ca8",
+		"name": "msg",
+		"func": "context.data = context.data || {};\nswitch (msg.topic){\n    case \"stieeufmg/temp\":\n    context.data.temp = msg.payload;\n    break;\n}\n\nmsg.payload = {}\nmsg.payload.chatId = 698770097\nmsg.payload.type = 'message'\nmsg.payload.content =  \"Atenção! Nivel de temperatura:\"+ context.data.temp + \" °C\\n\";\n\nreturn msg;",
+		"outputs": 1,
+		"noerr": 0,
+		"x": 1050,
+		"y": 800,
+		"wires": [
+			[
+				"f49b52a.2f22db"
+			]
+		]
+	},
+	{
+		"id": "a811380.ad227c8",
+		"type": "falling-edge",
+		"z": "5a76f86b.c39ca8",
+		"name": "Atenção",
+		"threshold": "30",
+		"x": 860,
+		"y": 800,
+		"wires": [
+			[
+				"2b13a07d.4d1fc"
+			]
+		]
+	},
+	{
+		"id": "f49b52a.2f22db",
+		"type": "telegram sender",
+		"z": "5a76f86b.c39ca8",
+		"name": "",
+		"bot": "113bbeab.8340d1",
+		"x": 1430,
+		"y": 480,
+		"wires": [
+			[]
+		]
+	},
+	{
+		"id": "2ab1244f.45be4c",
+		"type": "debug",
+		"z": "5a76f86b.c39ca8",
+		"name": "",
+		"active": false,
+		"tosidebar": true,
+		"console": false,
+		"tostatus": false,
+		"complete": "false",
+		"x": 1650,
+		"y": 320,
+		"wires": []
+	},
+	{
+		"id": "45e07ea4.9c419",
+		"type": "falling-edge",
+		"z": "5a76f86b.c39ca8",
+		"name": "Restabelecimento",
+		"threshold": "240",
+		"x": 890,
+		"y": 180,
+		"wires": [
+			[
+				"7901ca9d.5bcb04"
+			]
+		]
+	},
+	{
+		"id": "a011a782.71b398",
+		"type": "function",
+		"z": "5a76f86b.c39ca8",
+		"name": "msg",
+		"func": "context.data = context.data || {};\nswitch (msg.topic){\n    case \"stieeufmg/v1\":\n    context.data.v1 = msg.payload;\n    break;\n}\n\nmsg.payload = {}\nmsg.payload.chatId = 698770097\nmsg.payload.type = 'message'\nmsg.payload.content =  \"ALERTA!!! Elevação da tensão da Rede:\" + context.data.v1 + \" V\\n\";\n\nreturn msg;",
+		"outputs": 1,
+		"noerr": 0,
+		"x": 1050,
+		"y": 140,
+		"wires": [
+			[
+				"f49b52a.2f22db"
+			]
+		]
+	},
+	{
+		"id": "977a10e5.7ffc1",
+		"type": "rising-edge",
+		"z": "5a76f86b.c39ca8",
+		"name": "Restabelecimento",
+		"threshold": "240",
+		"x": 890,
+		"y": 140,
+		"wires": [
+			[
+				"a011a782.71b398"
+			]
+		]
+	},
+	{
+		"id": "7901ca9d.5bcb04",
+		"type": "function",
+		"z": "5a76f86b.c39ca8",
+		"name": "msg",
+		"func": "context.data = context.data || {};\nswitch (msg.topic){\n    case \"stieeufmg/v1\":\n    context.data.v1 = msg.payload;\n    break;\n}\n\nmsg.payload = {}\nmsg.payload.chatId = 698770097\nmsg.payload.type = 'message'\nmsg.payload.content =  \"Restabelecimento da tensão da Rede: \"+ context.data.v1 + \" V\\n\";\n\nreturn msg;",
+		"outputs": 1,
+		"noerr": 0,
+		"x": 1050,
+		"y": 180,
+		"wires": [
+			[
+				"f49b52a.2f22db"
+			]
+		]
+	},
+	{
+		"id": "f66fdd63.94f9a",
+		"type": "function",
+		"z": "5a76f86b.c39ca8",
+		"name": "Status",
+		"func": "\ncontext.data = context.data || {};\nswitch (msg.topic){\n    case \"stieeufmg/v1\":\n    context.data.v1 = msg.payload;\n    break;\n    \n    case \"stieeufmg/v2\":\n    context.data.v2 = msg.payload;\n    break;\n    \n    case \"stieeufmg/v3\":\n    context.data.v3 = msg.payload;\n    break;\n    \n    case \"stieeufmg/temp\":\n    context.data.temp = msg.payload;\n    break;\n    \n    case \"upd\":\n    context.data.upd = msg.payload.payload;\n    break;\n}\n\nif(msg.payload.content == \"/status\"){\n    \nmsg.payload = {}\nmsg.payload.chatId = 698770097\nmsg.payload.type = 'message'\nmsg.payload.content =  \"Tensão da Rede: \"+ context.data.v1 + \" V\\n\" + \n                        \"Tensão UPS 1: \"+ context.data.v2 + \" V\\n\" +\n                        \"Tensão UPS 2: \"+ context.data.v3 + \" V\\n\" +\n                        \"Temperatura: \"+ context.data.temp + \" °C\\n\"+\n                        \"Atualização: \"+ context.data.upd + \"\\n\";\n\nreturn msg;\n\n}",
+		"outputs": 1,
+		"noerr": 0,
+		"x": 1450,
+		"y": 400,
+		"wires": [
+			[
+				"f49b52a.2f22db",
+				"5fc95e47.aea6e"
+			]
+		]
+	},
+	{
+		"id": "e73135fe.1707f8",
+		"type": "link in",
+		"z": "5a76f86b.c39ca8",
+		"name": "Input_Values",
+		"links": [
+			"5611a99e.2e46f8",
+			"b58a21c1.20d6b",
+			"fe090634.be9898",
+			"ff3509a7.1df868"
+		],
+		"x": 1355,
+		"y": 420,
+		"wires": [
+			[
+				"f66fdd63.94f9a"
+			]
+		]
+	},
+	{
+		"id": "3cb9e799.b39838",
+		"type": "telegram receiver",
+		"z": "5a76f86b.c39ca8",
+		"name": "",
+		"bot": "113bbeab.8340d1",
+		"saveDataDir": "",
+		"filterCommands": false,
+		"x": 1430,
+		"y": 320,
+		"wires": [
+			[
+				"f66fdd63.94f9a",
+				"2ab1244f.45be4c"
+			],
+			[]
+		]
+	},
+	{
+		"id": "fee4eabc.c1f2a8",
+		"type": "falling-edge",
+		"z": "5a76f86b.c39ca8",
+		"name": "Restabelecimento",
+		"threshold": "240",
+		"x": 890,
+		"y": 360,
+		"wires": [
+			[
+				"5d381c47.224004"
+			]
+		]
+	},
+	{
+		"id": "5087805b.5f0c6",
+		"type": "function",
+		"z": "5a76f86b.c39ca8",
+		"name": "msg",
+		"func": "context.data = context.data || {};\nswitch (msg.topic){\n    case \"stieeufmg/v2\":\n    context.data.v2 = msg.payload;\n    break;\n}\n\nmsg.payload = {}\nmsg.payload.chatId = 698770097\nmsg.payload.type = 'message'\nmsg.payload.content =  \"ALERTA!!! Elevação da tensão no UPS 1:\" + context.data.v2 + \" V\\n\";\n\nreturn msg;",
+		"outputs": 1,
+		"noerr": 0,
+		"x": 1050,
+		"y": 320,
+		"wires": [
+			[
+				"f49b52a.2f22db"
+			]
+		]
+	},
+	{
+		"id": "2e801f02.97c56",
+		"type": "rising-edge",
+		"z": "5a76f86b.c39ca8",
+		"name": "Restabelecimento",
+		"threshold": "240",
+		"x": 890,
+		"y": 320,
+		"wires": [
+			[
+				"5087805b.5f0c6"
+			]
+		]
+	},
+	{
+		"id": "5d381c47.224004",
+		"type": "function",
+		"z": "5a76f86b.c39ca8",
+		"name": "msg",
+		"func": "context.data = context.data || {};\nswitch (msg.topic){\n    case \"stieeufmg/v2\":\n    context.data.v2 = msg.payload;\n    break;\n}\n\nmsg.payload = {}\nmsg.payload.chatId = 698770097\nmsg.payload.type = 'message'\nmsg.payload.content =  \"Restabelecimento da tensão no UPS 1: \"+ context.data.v2 + \" V\\n\";\n\nreturn msg;",
+		"outputs": 1,
+		"noerr": 0,
+		"x": 1050,
+		"y": 360,
+		"wires": [
+			[
+				"f49b52a.2f22db"
+			]
+		]
+	},
+	{
+		"id": "3f2717e.ed4a1e8",
+		"type": "falling-edge",
+		"z": "5a76f86b.c39ca8",
+		"name": "Restabelecimento",
+		"threshold": "240",
+		"x": 890,
+		"y": 540,
+		"wires": [
+			[
+				"c64ee8d8.91c3d8"
+			]
+		]
+	},
+	{
+		"id": "8b9583d5.8b6dd",
+		"type": "function",
+		"z": "5a76f86b.c39ca8",
+		"name": "msg",
+		"func": "context.data = context.data || {};\nswitch (msg.topic){\n    case \"stieeufmg/v3\":\n    context.data.v3 = msg.payload;\n    break;\n}\n\nmsg.payload = {}\nmsg.payload.chatId = 698770097\nmsg.payload.type = 'message'\nmsg.payload.content =  \"ALERTA!!! Elevação da tensão no UPS 2:\" + context.data.v3 + \" V\\n\";\n\nreturn msg;",
+		"outputs": 1,
+		"noerr": 0,
+		"x": 1050,
+		"y": 500,
+		"wires": [
+			[
+				"f49b52a.2f22db"
+			]
+		]
+	},
+	{
+		"id": "21f73753.ff0c98",
+		"type": "rising-edge",
+		"z": "5a76f86b.c39ca8",
+		"name": "Restabelecimento",
+		"threshold": "240",
+		"x": 890,
+		"y": 500,
+		"wires": [
+			[
+				"8b9583d5.8b6dd"
+			]
+		]
+	},
+	{
+		"id": "c64ee8d8.91c3d8",
+		"type": "function",
+		"z": "5a76f86b.c39ca8",
+		"name": "msg",
+		"func": "context.data = context.data || {};\nswitch (msg.topic){\n    case \"stieeufmg/v3\":\n    context.data.v3 = msg.payload;\n    break;\n}\n\nmsg.payload = {}\nmsg.payload.chatId = 698770097\nmsg.payload.type = 'message'\nmsg.payload.content =  \"Restabelecimento da tensão no UPS 2: \"+ context.data.v3 + \" V\\n\";\n\nreturn msg;",
+		"outputs": 1,
+		"noerr": 0,
+		"x": 1050,
+		"y": 540,
+		"wires": [
+			[
+				"f49b52a.2f22db"
+			]
+		]
+	},
+	{
+		"id": "6474b5e8.f12b6c",
+		"type": "link in",
+		"z": "5a76f86b.c39ca8",
+		"name": "Input_Values",
+		"links": [
+			"5611a99e.2e46f8",
+			"b58a21c1.20d6b",
+			"fe090634.be9898",
+			"ff3509a7.1df868"
+		],
+		"x": 1315,
+		"y": 80,
+		"wires": [
+			[
+				"3819b2f3.b0ba6e"
+			]
+		]
+	},
+	{
+		"id": "3819b2f3.b0ba6e",
+		"type": "function",
+		"z": "5a76f86b.c39ca8",
+		"name": "Last_Receive",
+		"func": "\nswitch (msg.topic){\n    case \"stieeufmg/v1\":\n    break;\n    \n    case \"stieeufmg/v2\":\n    break;\n    \n    case \"stieeufmg/v3\":\n    break;\n    \n    case \"stieeufmg/temp\":\n    break;\n}\n\n    \n// msg.payload = Date.now();\n// return msg;\n\n// var now = new Date().toLocaleString(\"de-CH\");\n// return {payload: now};\n\nvar date;\ndate = new Date();\ndate = (('00' + date.getDate()).slice(-2) + '/' + ('00' + (date.getMonth()+1)).slice(-2) + '/' + date.getFullYear() + ' ' + ('00' + date.getHours()).slice(-2) + ':' + ('00' + date.getMinutes()).slice(-2) + ':' + ('00' + date.getSeconds()).slice(-2));\nreturn {payload: date};",
+		"outputs": 1,
+		"noerr": 0,
+		"x": 1440,
+		"y": 80,
+		"wires": [
+			[
+				"16d744e4.a14c3b",
+				"c78353e.30e2cb",
+				"48111f0e.1618e"
+			]
+		]
+	},
+	{
+		"id": "16d744e4.a14c3b",
+		"type": "debug",
+		"z": "5a76f86b.c39ca8",
+		"name": "",
+		"active": false,
+		"tosidebar": true,
+		"console": false,
+		"tostatus": false,
+		"complete": "false",
+		"x": 1610,
+		"y": 40,
+		"wires": []
+	},
+	{
+		"id": "c78353e.30e2cb",
+		"type": "ui_template",
+		"z": "5a76f86b.c39ca8",
+		"group": "2f25630f.77df1c",
+		"name": "",
+		"order": 7,
+		"width": 3,
+		"height": 1,
+		"format": "<script>\n    (function(scope) {\n        scope.$watch('msg', function(data) {\n            var elem = document.getElementById(\"headerStatus\")\n            if(elem !== null) {\n                elem.className = data.payload;\n                elem.innerHTML = data.payload;\n            }\n        });\n    })(scope);\n</script>",
+		"storeOutMessages": true,
+		"fwdInMessages": true,
+		"templateScope": "local",
+		"x": 1640,
+		"y": 80,
+		"wires": [
+			[]
+		]
+	},
+	{
+		"id": "5d757871.6e2618",
+		"type": "ui_template",
+		"z": "5a76f86b.c39ca8",
+		"group": "2f25630f.77df1c",
+		"name": "Header Status",
+		"order": 6,
+		"width": 3,
+		"height": 1,
+		"format": "<style>\n    #headerStatus {\n        font-weight: bold;\n        text-transform: uppercase;\n    }\n    #headerStatus.online {\n        color: lime;\n    }\n    #headerStatus.offline {\n        color: tomato;\n    }\n</style>\n\n<script id=\"titleScript\" type=\"text/javascript\">\n$(function() {\n    if($('.md-toolbar-tools').length){\n        initHeader();\n    } else setTimeout(initHeader, 500)\n});\n\nfunction initHeader(){\n    if (!$('#headerStatus').length) {\n        var toolbar = $('.md-toolbar-tools');\n        var div = $('<div/>');\n        var p = $('<p id=\"headerStatus\" />');\n        div[0].style.margin = '5px 5px 5px auto';\n        div.append(p);\n        toolbar.append(div);\n    }\n}\n</script>",
+		"storeOutMessages": false,
+		"fwdInMessages": false,
+		"templateScope": "local",
+		"x": 1620,
+		"y": 140,
+		"wires": [
+			[]
+		]
+	},
+	{
+		"id": "5fc95e47.aea6e",
+		"type": "debug",
+		"z": "5a76f86b.c39ca8",
+		"name": "",
+		"active": false,
+		"tosidebar": true,
+		"console": false,
+		"tostatus": false,
+		"complete": "false",
+		"x": 1650,
+		"y": 400,
+		"wires": []
+	},
+	{
+		"id": "48111f0e.1618e",
+		"type": "function",
+		"z": "5a76f86b.c39ca8",
+		"name": "",
+		"func": "msg.topic = \"upd\"\nreturn msg;",
+		"outputs": 1,
+		"noerr": 0,
+		"x": 1430,
+		"y": 200,
+		"wires": [
+			[
+				"733535d.f3071cc"
+			]
+		]
+	},
+	{
+		"id": "733535d.f3071cc",
+		"type": "change",
+		"z": "5a76f86b.c39ca8",
+		"name": "",
+		"rules": [
+			{
+				"t": "set",
+				"p": "payload",
+				"pt": "msg",
+				"to": "{\t   \"topic\": \"upd\",\t   \"payload\": payload\t} ",
+				"tot": "jsonata"
+			}
+		],
+		"action": "",
+		"property": "",
+		"from": "",
+		"to": "",
+		"reg": false,
+		"x": 1620,
+		"y": 200,
+		"wires": [
+			[
+				"f66fdd63.94f9a"
+			]
+		]
+	},
+	{
+		"id": "538bae5e.5b4a1",
+		"type": "file",
+		"z": "5a76f86b.c39ca8",
+		"name": "",
+		"filename": "/tmp/Vrede.log",
+		"appendNewline": true,
+		"createDir": false,
+		"overwriteFile": "true",
+		"x": 1760,
+		"y": 620,
+		"wires": [
+			[]
+		]
+	},
+	{
+		"id": "3c78ba03.283e06",
+		"type": "function",
+		"z": "5a76f86b.c39ca8",
+		"name": "",
+		"func": "if (msg.topic === \"save\") {\n    msg.payload = context.last;\n    return msg;\n}\nelse {\n    context.last = msg.payload;\n}\nreturn null;",
+		"outputs": 1,
+		"noerr": 0,
+		"x": 1590,
+		"y": 620,
+		"wires": [
+			[
+				"538bae5e.5b4a1"
+			]
+		]
+	},
+	{
+		"id": "f3e66f38.36b2b",
+		"type": "json",
+		"z": "5a76f86b.c39ca8",
+		"name": "",
+		"x": 1450,
+		"y": 640,
+		"wires": [
+			[
+				"3c78ba03.283e06"
+			]
+		]
+	},
+	{
+		"id": "9f17daa1.73b8f8",
+		"type": "ui_button",
+		"z": "5a76f86b.c39ca8",
+		"name": "",
+		"group": "eb6e797b.1bbec8",
+		"order": 4,
+		"width": 2,
+		"height": 1,
+		"passthru": false,
+		"label": "salvar",
+		"tooltip": "",
+		"color": "",
+		"bgcolor": "",
+		"icon": "",
+		"payload": "",
+		"payloadType": "str",
+		"topic": "save",
+		"x": 1450,
+		"y": 600,
+		"wires": [
+			[
+				"3c78ba03.283e06"
+			]
+		]
+	},
+	{
+		"id": "d28e49a6.77edd8",
+		"type": "link out",
+		"z": "5a76f86b.c39ca8",
+		"name": "V1_Out_Chart",
+		"links": [
+			"4581e331.06975c",
+			"4996a104.6f55"
+		],
+		"x": 575,
+		"y": 260,
+		"wires": []
+	},
+	{
+		"id": "3545720f.33655e",
+		"type": "link out",
+		"z": "5a76f86b.c39ca8",
+		"name": "V2_Out_Chart",
+		"links": [
+			"7c1e707d.dc82"
+		],
+		"x": 575,
+		"y": 440,
+		"wires": []
+	},
+	{
+		"id": "7798151d.30111c",
+		"type": "link out",
+		"z": "5a76f86b.c39ca8",
+		"name": "V3_Out_Chart",
+		"links": [
+			"fc5bf347.aa068"
+		],
+		"x": 575,
+		"y": 620,
+		"wires": []
+	},
+	{
+		"id": "90731085.230ba",
+		"type": "link out",
+		"z": "5a76f86b.c39ca8",
+		"name": "Temp_Out_Chart",
+		"links": [],
+		"x": 575,
+		"y": 800,
+		"wires": []
+	},
+	{
+		"id": "4581e331.06975c",
+		"type": "link in",
+		"z": "5a76f86b.c39ca8",
+		"name": "",
+		"links": [
+			"d28e49a6.77edd8"
+		],
+		"x": 1355,
+		"y": 640,
+		"wires": [
+			[
+				"f3e66f38.36b2b"
+			]
+		]
+	},
+	{
+		"id": "d7a58cb9.94d7b",
+		"type": "file",
+		"z": "5a76f86b.c39ca8",
+		"name": "",
+		"filename": "/tmp/Vups1.log",
+		"appendNewline": true,
+		"createDir": false,
+		"overwriteFile": "true",
+		"x": 1760,
+		"y": 720,
+		"wires": [
+			[]
+		]
+	},
+	{
+		"id": "69aa9186.8d18e",
+		"type": "function",
+		"z": "5a76f86b.c39ca8",
+		"name": "",
+		"func": "if (msg.topic === \"save\") {\n    msg.payload = context.last;\n    return msg;\n}\nelse {\n    context.last = msg.payload;\n}\nreturn null;",
+		"outputs": 1,
+		"noerr": 0,
+		"x": 1590,
+		"y": 720,
+		"wires": [
+			[
+				"d7a58cb9.94d7b"
+			]
+		]
+	},
+	{
+		"id": "1313475b.24f7a9",
+		"type": "json",
+		"z": "5a76f86b.c39ca8",
+		"name": "",
+		"x": 1450,
+		"y": 740,
+		"wires": [
+			[
+				"69aa9186.8d18e"
+			]
+		]
+	},
+	{
+		"id": "51a14656.dfba58",
+		"type": "ui_button",
+		"z": "5a76f86b.c39ca8",
+		"name": "",
+		"group": "bbd43066.29b24",
+		"order": 4,
+		"width": 2,
+		"height": 1,
+		"passthru": false,
+		"label": "salvar",
+		"tooltip": "",
+		"color": "",
+		"bgcolor": "",
+		"icon": "",
+		"payload": "",
+		"payloadType": "str",
+		"topic": "save",
+		"x": 1450,
+		"y": 700,
+		"wires": [
+			[
+				"69aa9186.8d18e"
+			]
+		]
+	},
+	{
+		"id": "7c1e707d.dc82",
+		"type": "link in",
+		"z": "5a76f86b.c39ca8",
+		"name": "",
+		"links": [
+			"3545720f.33655e"
+		],
+		"x": 1355,
+		"y": 740,
+		"wires": [
+			[
+				"1313475b.24f7a9"
+			]
+		]
+	},
+	{
+		"id": "d342f4a1.27cb48",
+		"type": "file",
+		"z": "5a76f86b.c39ca8",
+		"name": "",
+		"filename": "/tmp/Vups2.log",
+		"appendNewline": true,
+		"createDir": false,
+		"overwriteFile": "true",
+		"x": 1760,
+		"y": 820,
+		"wires": [
+			[]
+		]
+	},
+	{
+		"id": "4a841785.ef9918",
+		"type": "function",
+		"z": "5a76f86b.c39ca8",
+		"name": "",
+		"func": "if (msg.topic === \"save\") {\n    msg.payload = context.last;\n    return msg;\n}\nelse {\n    context.last = msg.payload;\n}\nreturn null;",
+		"outputs": 1,
+		"noerr": 0,
+		"x": 1590,
+		"y": 820,
+		"wires": [
+			[
+				"d342f4a1.27cb48"
+			]
+		]
+	},
+	{
+		"id": "516dd192.058eb",
+		"type": "json",
+		"z": "5a76f86b.c39ca8",
+		"name": "",
+		"x": 1450,
+		"y": 840,
+		"wires": [
+			[
+				"4a841785.ef9918"
+			]
+		]
+	},
+	{
+		"id": "ee53c2b.0b0a74",
+		"type": "ui_button",
+		"z": "5a76f86b.c39ca8",
+		"name": "",
+		"group": "e25a9348.7262c",
+		"order": 4,
+		"width": 2,
+		"height": 1,
+		"passthru": false,
+		"label": "salvar",
+		"tooltip": "",
+		"color": "",
+		"bgcolor": "",
+		"icon": "",
+		"payload": "",
+		"payloadType": "str",
+		"topic": "save",
+		"x": 1450,
+		"y": 800,
+		"wires": [
+			[
+				"4a841785.ef9918"
+			]
+		]
+	},
+	{
+		"id": "fc5bf347.aa068",
+		"type": "link in",
+		"z": "5a76f86b.c39ca8",
+		"name": "",
+		"links": [
+			"7798151d.30111c"
+		],
+		"x": 1355,
+		"y": 840,
+		"wires": [
+			[
+				"516dd192.058eb"
+			]
+		]
+	},
+	{
+		"id": "c8e4dfd.556992",
+		"type": "file",
+		"z": "5a76f86b.c39ca8",
+		"name": "",
+		"filename": "/tmp/Temp.log",
+		"appendNewline": true,
+		"createDir": false,
+		"overwriteFile": "true",
+		"x": 1760,
+		"y": 920,
+		"wires": [
+			[]
+		]
+	},
+	{
+		"id": "63acf127.8ec2f",
+		"type": "function",
+		"z": "5a76f86b.c39ca8",
+		"name": "",
+		"func": "if (msg.topic === \"save\") {\n    msg.payload = context.last;\n    return msg;\n}\nelse {\n    context.last = msg.payload;\n}\nreturn null;",
+		"outputs": 1,
+		"noerr": 0,
+		"x": 1590,
+		"y": 920,
+		"wires": [
+			[
+				"c8e4dfd.556992"
+			]
+		]
+	},
+	{
+		"id": "b1c1cdbe.14cc",
+		"type": "json",
+		"z": "5a76f86b.c39ca8",
+		"name": "",
+		"x": 1450,
+		"y": 940,
+		"wires": [
+			[
+				"63acf127.8ec2f"
+			]
+		]
+	},
+	{
+		"id": "798b7d58.52c624",
+		"type": "ui_button",
+		"z": "5a76f86b.c39ca8",
+		"name": "",
+		"group": "56a67a37.065bd4",
+		"order": 4,
+		"width": 2,
+		"height": 1,
+		"passthru": false,
+		"label": "salvar",
+		"tooltip": "",
+		"color": "",
+		"bgcolor": "",
+		"icon": "",
+		"payload": "",
+		"payloadType": "str",
+		"topic": "save",
+		"x": 1450,
+		"y": 900,
+		"wires": [
+			[
+				"63acf127.8ec2f"
+			]
+		]
+	},
+	{
+		"id": "4996a104.6f55",
+		"type": "link in",
+		"z": "5a76f86b.c39ca8",
+		"name": "",
+		"links": [
+			"d28e49a6.77edd8"
+		],
+		"x": 1355,
+		"y": 940,
+		"wires": [
+			[
+				"b1c1cdbe.14cc"
+			]
+		]
+	},
+	{
+		"id": "f86c69d5.74df28",
+		"type": "mqtt-broker",
+		"z": "",
+		"name": "Eclipse",
+		"broker": "mqtt.eclipse.org",
+		"port": "1883",
+		"clientid": "",
+		"usetls": false,
+		"compatmode": false,
+		"keepalive": "60",
+		"cleansession": true,
+		"birthTopic": "",
+		"birthQos": "0",
+		"birthPayload": "",
+		"closeTopic": "",
+		"closeQos": "0",
+		"closePayload": "",
+		"willTopic": "",
+		"willQos": "0",
+		"willPayload": ""
+	},
+	{
+		"id": "eb6e797b.1bbec8",
+		"type": "ui_group",
+		"z": "",
+		"name": "Tensão da Rede Elétrica",
+		"tab": "8ab4be81.6a328",
+		"order": 2,
+		"disp": false,
+		"width": "6",
+		"collapse": false
+	},
+	{
+		"id": "56a67a37.065bd4",
+		"type": "ui_group",
+		"z": "",
+		"name": "Temperatura",
+		"tab": "8ab4be81.6a328",
+		"order": 1,
+		"disp": false,
+		"width": "6",
+		"collapse": false
+	},
+	{
+		"id": "bbd43066.29b24",
+		"type": "ui_group",
+		"z": "",
+		"name": "UPS 1",
+		"tab": "8ab4be81.6a328",
+		"order": 3,
+		"disp": false,
+		"width": "6",
+		"collapse": false
+	},
+	{
+		"id": "e25a9348.7262c",
+		"type": "ui_group",
+		"z": "",
+		"name": "UPS 2",
+		"tab": "8ab4be81.6a328",
+		"order": 4,
+		"disp": false,
+		"width": "6",
+		"collapse": false
+	},
+	{
+		"id": "2f25630f.77df1c",
+		"type": "ui_group",
+		"z": "",
+		"name": "Tempo Atual",
+		"tab": "8ab4be81.6a328",
+		"order": 5,
+		"disp": true,
+		"width": "24",
+		"collapse": false
+	},
+	{
+		"id": "113bbeab.8340d1",
+		"type": "telegram bot",
+		"z": "",
+		"botname": "Telegram_bot",
+		"usernames": "",
+		"chatids": "",
+		"baseapiurl": "",
+		"updatemode": "polling",
+		"pollinterval": "",
+		"usesocks": false,
+		"sockshost": "",
+		"socksport": "6667",
+		"socksusername": "anonymous",
+		"sockspassword": "",
+		"bothost": "",
+		"localbotport": "8443",
+		"publicbotport": "8443",
+		"privatekey": "",
+		"certificate": "",
+		"useselfsignedcertificate": false,
+		"sslterminated": false,
+		"verboselogging": false
+	},
+	{
+		"id": "8ab4be81.6a328",
+		"type": "ui_tab",
+		"z": "",
+		"name": "Sistema_monitoramento_V_Temp",
+		"icon": "dashboard",
+		"disabled": false,
+		"hidden": false
+	}
+]
